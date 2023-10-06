@@ -1,0 +1,71 @@
+<view class="body">
+
+<view class="rectangle">
+  <image class="ellipse" id="head_portrait" src="{{headIcon}}" mode="aspectFit"></image>
+
+
+  <!-- 未登录 -->
+  <view wx:if="{{!isLogin}}">
+	<view class="login_text" bindtap="redirect_login"> 登录/注册 </view>
+	<view class="login_message">登录后享受更多服务</view>
+
+
+  </view>
+  <!-- 已登录 -->
+  <view wx:else>
+	<view class="login_text">{{username}} </view>
+	<view id="login_out">安全退出</view>
+  </view>
+
+
+</view>
+	<view class="choice_list">
+		<view class="redirecr_list" id="redirect_choice" bindtap="redirect_choice">
+		<image class="icon" src="/images/normal_u11.png"></image>
+			<text wx:if="{{shenfen=='管理员'}}">管理员</text>
+			<text wx:elif="{{shenfen=='读者'}}">读者</text>
+			<text wx:else>身份验证</text>
+		<image class="arrow" src="/images/normal_u32.svg" bindtap="select"></image>
+</view>
+
+  <!-- 分割线 -->
+  <!-- <image class="cutoff_rule" src="/images/normal_u30.svg" wx:if="{{shenfen=='管理员'}}"></image>
+
+  <view class="redirecr_list" id="redirect_shopping" bindtap="redirect_shopping" wx:if="{{shenfen=='管理员'}}">
+	<image class="icon" src="/images/normal_u7.png"></image>
+	<text>管理</text>
+	<image class="arrow" src="/images/normal_u32.svg"></image>
+  </view> -->
+
+  <!-- 分割线 -->
+  <image class="cutoff_rule" src="/images/normal_u30.svg"></image>
+
+  <view class="redirecr_list" id="redirecr_feedback" bindtap="redirecr_feedback">
+	<image class="icon" src="/images/normal_u9.png"></image>
+	<text wx:if="{{shenfen=='管理员'}}">意见查看</text>
+	<text wx:if="{{shenfen=='读者'}}">意见反馈</text>
+	<text wx:else>意见</text>
+	<image class="arrow" src="/images/normal_u32.svg"></image>
+  </view>
+
+  <!-- 分割线 -->
+  <image class="cutoff_rule" src="/images/normal_u30.svg"></image>
+
+  <view class="redirecr_list" id="redirecr_about" bindtap="redirecr_about">
+	<image class="icon" src="/images/normal_u8.png"></image>
+	<text>关于我们</text>
+	<image class="arrow" src="/images/normal_u32.svg"></image>
+  </view>
+
+
+  <!-- 分割线 -->
+  <image class="cutoff_rule" src="/images/normal_u30.svg"></image>
+
+  <view class="redirecr_list" id="redirecr_setting" bindtap="redirecr_setting" wx:if="{{shenfen=='管理员'}}">
+	<image class="icon" src="/images/normal_u7.png"></image>
+	<text>设置</text>
+	<image class="arrow" src="/images/normal_u32.svg"></image>
+  </view>
+
+</view>
+</view>

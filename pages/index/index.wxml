@@ -1,0 +1,24 @@
+<!--pages/index/index.wxml-->
+<view id="body">
+
+<view class="top-bar">
+  <text>书籍种类</text>
+  
+  <button id="add-button" bindtap="add_device" wx:if="{{shenfen=='读者'}}">我要还书</button>
+  <button id="add-button" bindtap="addbook" wx:elif="{{shenfen=='管理员'}}">我要添加</button>
+</view>
+
+  <view id="device-label-list">
+    <view
+     wx:for="{{deviceList}}" wx:key="*this"
+     class="device-label" >
+      <image src="{{item.icon}}" mode="aspectFill"></image>
+      <text>{{item.title}}</text>
+      <button wx:if="{{item.title=='自然科学'}}" bindtap="borrow1" id="{{item}}">查看</button>
+      <button wx:elif="{{item.title=='人文社科'}}" bindtap="borrow2" id="{{item}}">查看</button>
+      <button wx:elif="{{item.title=='经济管理'}}" bindtap="borrow3" id="{{item}}">查看</button>
+      <button wx:elif="{{item.title=='专业书籍'}}" bindtap="borrow4" id="{{item}}">查看</button>
+    </view>
+  </view>
+  <!-- <button id="add-button" bindtap="add_device">添加设备</button> -->
+</view>

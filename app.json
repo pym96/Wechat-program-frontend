@@ -1,0 +1,43 @@
+{
+	"pages": [
+		"pages/main/index",
+		"pages/index/index",
+		"pages/logs/logs",
+		"pages/feedback/index",
+		"pages/login/index",
+		"pages/choices/index",
+		"pages/borrow/index",
+		"pages/register/index",
+		"pages/manage/index",
+		"pages/addbook/add",
+		"pages/returnbook/return",
+		"pages/bookinfo/info",
+		"pages/enroll/index"
+	],
+	"tabBar": {
+		"color": " #3d567e",
+		"selectedColor": "#679bf5",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "images/TabBar/normal_u17.png",
+				"selectedIconPath": "images/TabBar/normal_u502.png",
+				"text": "主页"
+			},
+			{
+				"pagePath": "pages/main/index",
+				"iconPath": "images/TabBar/normal_u503.png",
+				"selectedIconPath": "images/TabBar/normal_u587.png",
+				"text": "我的"
+			}
+		]
+	},
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "图书管理系统",
+		"navigationBarTextStyle": "black"
+	},
+	"style": "v2",
+	"sitemapLocation": "sitemap.json"
+}
